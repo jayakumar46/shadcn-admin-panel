@@ -41,10 +41,10 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     getSortedRowModel: getSortedRowModel(),
     onSortingChange: setSorting,
-    onRowSelectionChange:setRowSelection,
+    onRowSelectionChange: setRowSelection,
     state: {
       sorting,
-      rowSelection
+      rowSelection,
     },
   });
 
@@ -54,8 +54,8 @@ export function DataTable<TData, TValue>({
       {Object.keys(rowSelection).length > 0 && (
         <div className="flex justify-end">
           <button className="flex items-center gap-2 px-2 py-1 bg-red-500 text-white text-sm rounded-md m-4 cursor-pointer">
-            <Trash2 className="w-4 h-4"/>
-            Delete Payment(s)
+            <Trash2 className="w-4 h-4" />
+            Delete Product(s)
           </button>
         </div>
       )}
@@ -70,7 +70,7 @@ export function DataTable<TData, TValue>({
                       ? null
                       : flexRender(
                           header.column.columnDef.header,
-                          header.getContext()
+                          header.getContext(),
                         )}
                   </TableHead>
                 );
